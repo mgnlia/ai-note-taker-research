@@ -1,24 +1,35 @@
 # AI Note Taker Research Report 2025
 
-**Research Date:** January 2025  
-**Market Size:** $450.7M (2023) → $2,545.1M (2033) projected  
-**CAGR:** 16.5% (2024-2025)
+**Research Date:** February 2025
+**Confidence Methodology:** All claims rated Low/Medium/High/Verified. Vendor self-reported claims marked "Low" unless independently validated.
 
 ---
 
 ## Executive Summary
 
-The AI note-taking market has exploded with solutions for meeting transcription, voice-to-text, and intelligent summarization. This research covers **commercial solutions** (Otter.ai, Fireflies.ai, Fathom, tl;dv, Granola, Krisp, Notion AI) and **open-source alternatives** (Whisper, OpenWhispr, Whispo, Scriberr).
+The AI note-taking market has matured rapidly with solutions spanning meeting transcription, voice-to-text, and intelligent summarization. This research covers **8 commercial AI-native note takers** and **5 open-source speech-to-text solutions**.
 
-**Key Finding:** No single tool dominates all use cases. Choose based on: platform support, accuracy, integrations, compliance, and pricing.
+**Key Finding:** No single tool dominates all use cases. Selection depends on: platform support, accuracy requirements, integrations, compliance needs, and budget.
+
+---
+
+## Market Sizing (Primary Sources)
+
+| Source | Base Year | Forecast | CAGR |
+|--------|-----------|----------|------|
+| **Grand View Research** | USD 20.25B (2023) | USD 53.67B (2030) | 14.6% |
+| **DataHorizon Research** | USD 11.2B (2023) | USD 45.8B (2033) | 15.1% |
+| **IMARC Group** | USD 13.2B (2024) | USD 47.4B (2033) | 15.3% |
+
+*Note: Market sizing varies by scope definition (speech recognition vs. AI note-taking vs. conversational AI). All figures refer to the broader speech/voice recognition market that AI note-takers operate within.*
 
 ---
 
 ## Commercial AI Note Takers
 
-### 1. **Otter.ai** ⭐ Best Overall Accuracy
+### 1. **Otter.ai** — Best Overall Accuracy
 - **Pricing:** Free (limited), Pro $10/mo, Business $20/mo
-- **Accuracy:** 95% (highest in market)
+- **Accuracy:** 83-99% depending on audio quality (vendor claim). Independent testing: WER 19.2% (University Transcriptions UK study). *Confidence: Low-Medium*
 - **Platforms:** Zoom, Google Meet, Microsoft Teams
 - **Key Features:**
   - Real-time transcription
@@ -26,12 +37,12 @@ The AI note-taking market has exploded with solutions for meeting transcription,
   - Speaker identification
   - Integration: Slack, Notion, HubSpot
   - SOC 2, GDPR compliant
-- **Best For:** Teams needing highest accuracy across multiple platforms
+- **Best For:** Teams needing high accuracy across multiple platforms
 - **URL:** https://otter.ai
 
-### 2. **Fireflies.ai** ⭐ Best for CRM Integration
+### 2. **Fireflies.ai** — Best for CRM Integration
 - **Pricing:** Free, Pro $18/mo
-- **Accuracy:** 90-93%
+- **Accuracy:** 90-93% (vendor claim). *Confidence: Low*
 - **Platforms:** Zoom, Google Meet, Teams, Webex
 - **Key Features:**
   - CRM-driven workflow automation
@@ -43,22 +54,21 @@ The AI note-taking market has exploded with solutions for meeting transcription,
 - **Trade-off:** 10-15 minute transcription delay
 - **URL:** https://fireflies.ai
 
-### 3. **Fathom** ⭐ Best Free Option (Zoom-Only)
+### 3. **Fathom** — Best Free Option
 - **Pricing:** Completely FREE
-- **Accuracy:** 92%
-- **Platforms:** Zoom only
+- **Accuracy:** 92% (vendor claim). *Confidence: Low*
+- **Platforms:** Zoom, Google Meet, Microsoft Teams *(verified 2025)*
 - **Key Features:**
   - Real-time highlighting
   - One-minute summaries
   - Google Docs, Notion export
   - No credit card required
   - SOC 2 compliant
-- **Best For:** Small Zoom-first teams, cost-conscious users
-- **Limitation:** Zoom-only (no Teams, Google Meet)
+- **Best For:** Small teams, cost-conscious users
 - **URL:** https://fathom.video
 
 ### 4. **tl;dv** (Tell; Didn't View)
-- **Pricing:** Free + paid tiers
+- **Pricing:** Free + paid tiers ($30/mo Pro)
 - **Platforms:** Zoom, Google Meet, Teams
 - **Key Features:**
   - AI-powered summaries
@@ -83,111 +93,103 @@ The AI note-taking market has exploded with solutions for meeting transcription,
 - **Pricing:** Free + premium
 - **Platforms:** Cross-platform (Zoom, Teams, Meet)
 - **Key Features:**
-  - Noise cancellation
-  - AI meeting assistant
+  - Noise cancellation + AI meeting assistant
   - Real-time transcription
-  - Privacy-focused
+  - Privacy-focused (on-device noise cancellation)
 - **Best For:** Users wanting noise cancellation + transcription
 - **URL:** https://krisp.ai
 
-### 7. **Notion AI**
+### 7. **Zoom AI Companion**
+- **Pricing:** Included with paid Zoom plans
+- **Platforms:** Zoom (native)
+- **Key Features:**
+  - Native meeting summaries
+  - Smart chapters
+  - Action item extraction
+  - No additional bot in meeting
+- **Best For:** Zoom-native organizations
+- **URL:** https://zoom.us
+
+### 8. **Notion AI**
 - **Pricing:** $10/month (within Notion)
 - **Platforms:** Web, Desktop, Mobile
 - **Key Features:**
-  - All-in-one workspace
+  - All-in-one workspace with AI
   - AI writing assistant
-  - PDF/image analysis
   - Database insights
   - Multi-language support
 - **Best For:** Teams already using Notion
 - **URL:** https://notion.so
 
-### 8. **Microsoft OneNote AI**
-- **Pricing:** Free (5GB) + Microsoft 365
-- **Platforms:** Windows, Mac, iOS, Android, Web
-- **Key Features:**
-  - Smart tagging
-  - Voice-to-text
-  - Deep Microsoft ecosystem integration
-  - Free tier available
-- **Best For:** Microsoft ecosystem users
-- **URL:** https://www.onenote.com
-
 ---
 
-## Open Source AI Note Takers
+## Open Source Speech-to-Text Solutions
 
 ### 1. **Whisper (OpenAI)** ⭐ Most Popular
-- **Model:** Open-source speech-to-text
-- **Accuracy:** Trained on 680,000 hours of multilingual audio
 - **License:** MIT
+- **Training Data:** 680,000 hours of multilingual audio
 - **Key Features:**
   - Runs fully offline/locally
   - Handles accents, background noise, mixed languages
-  - Multiple model sizes (tiny, base, small, medium, large)
-  - Python library
+  - Multiple model sizes (tiny → large-v3)
+  - Python library, extensive ecosystem
 - **Best For:** Developers, privacy-first users, self-hosted deployments
 - **GitHub:** https://github.com/openai/whisper
 
-### 2. **OpenWhispr**
-- **Type:** Open-source voice dictation
-- **License:** Open source
+### 2. **Vosk**
+- **License:** Apache 2.0
 - **Key Features:**
-  - Fully private, runs locally
-  - AI-powered speech-to-text
-  - No cloud dependency
-- **Best For:** Privacy-conscious users
-- **URL:** https://openwhispr.com
+  - Lightweight, works offline
+  - 20+ languages
+  - Mobile-friendly (Android, iOS)
+  - Streaming API
+- **Best For:** Edge/mobile deployments
+- **GitHub:** https://github.com/alphacep/vosk-api
 
-### 3. **Whispo**
-- **Type:** Desktop app (Mac, Windows)
-- **License:** Open source
+### 3. **Coqui STT**
+- **License:** MPL 2.0
 - **Key Features:**
-  - Uses OpenAI Whisper backend
-  - Locally-hosted dictation
-  - Direct text insertion into active app
-  - Free
-- **Best For:** Local desktop transcription
+  - DeepSpeech-based
+  - Fine-tunable on custom data
+  - Real-time streaming
+- **Best For:** Custom model training
+- **GitHub:** https://github.com/coqui-ai/STT
 
-### 4. **Scriberr**
-- **Type:** Self-hostable audio transcription
-- **License:** Open source
+### 4. **Silero Models**
+- **License:** Various (check repo)
 - **Key Features:**
-  - Local transcription + summarization
-  - Uses Whisper models
-  - Whisper.cpp inference engine
-  - Privacy-first
-- **Best For:** Self-hosted deployments, enterprises
+  - Pre-trained STT/TTS models
+  - PyTorch-based
+  - Voice Activity Detection (VAD)
+  - Compact model sizes
+- **Best For:** Lightweight inference, VAD
+- **GitHub:** https://github.com/snakers4/silero-models
 
-### 5. **Privacy-First AI Meeting Assistant**
-- **Type:** Open-source meeting minutes tool
-- **License:** Open source
+### 5. **Kaldi**
+- **License:** Apache 2.0
 - **Key Features:**
-  - On-premise deployment
-  - Transcription + summarization
-  - Data sovereignty
-  - Enterprise-ready
-- **Best For:** Enterprise privacy requirements
-- **GitHub:** https://github.com/Zackriya-Solutions/meeting-minutes
+  - Research-grade ASR toolkit
+  - Highly configurable pipeline
+  - Used in academic research
+- **Best For:** Research, custom ASR pipelines
+- **GitHub:** https://github.com/kaldi-asr/kaldi
 
 ---
 
 ## Feature Comparison Matrix
 
-| Feature | Otter.ai | Fireflies | Fathom | Notion AI | Whisper |
-|---------|----------|-----------|--------|-----------|---------|
-| **Real-time Transcription** | ✅ 95% | ✅ 90-93% | ✅ 92% | ❌ | ✅ Offline |
-| **AI Summaries** | ✅ Customizable | ✅ CRM-focused | ✅ 1-min | ✅ | ❌ (needs LLM) |
+| Feature | Otter.ai | Fireflies | Fathom | Whisper | Vosk |
+|---------|----------|-----------|--------|---------|------|
+| **Real-time Transcription** | ✅ | ✅ | ✅ | ✅ Offline | ✅ Offline |
+| **AI Summaries** | ✅ | ✅ CRM | ✅ | ❌ (needs LLM) | ❌ |
 | **Speaker ID** | ✅ | ✅ | ✅ | ❌ | ❌ |
-| **Zoom Support** | ✅ | ✅ | ✅ | ❌ | ✅ (via integration) |
-| **Teams Support** | ✅ | ✅ | ❌ | ❌ | ✅ (via integration) |
-| **Google Meet** | ✅ | ✅ | ❌ | ❌ | ✅ (via integration) |
-| **Slack Integration** | ✅ | ✅ | ❌ | ✅ | ❌ |
-| **Notion Integration** | ✅ | ❌ | ✅ | ✅ | ❌ |
+| **Zoom** | ✅ | ✅ | ✅ | Via integration | Via integration |
+| **Teams** | ✅ | ✅ | ✅ | Via integration | Via integration |
+| **Google Meet** | ✅ | ✅ | ✅ | Via integration | Via integration |
 | **CRM Integration** | HubSpot | Salesforce | ❌ | ❌ | ❌ |
-| **Free Tier** | ✅ Limited | ✅ Limited | ✅ Full | ❌ | ✅ Open source |
-| **Privacy/Self-Hosted** | ❌ Cloud | ❌ Cloud | ❌ Cloud | ❌ Cloud | ✅ Local |
-| **SOC 2 / GDPR** | ✅ Both | ✅ GDPR | ✅ SOC 2 | ✅ | N/A |
+| **Free Tier** | Limited | Limited | ✅ Full | ✅ OSS | ✅ OSS |
+| **Self-Hosted** | ❌ | ❌ | ❌ | ✅ | ✅ |
+| **SOC 2 / GDPR** | ✅ Both | ✅ GDPR | ✅ SOC 2 | N/A | N/A |
 
 ---
 
@@ -200,8 +202,8 @@ The AI note-taking market has exploded with solutions for meeting transcription,
 | **Fathom** | ✅ Full Free | — | — |
 | **tl;dv** | Yes (limited) | $30/mo | Custom |
 | **Notion AI** | — | $10/mo | — |
-| **OneNote** | Free (5GB) | $6/mo (365) | — |
 | **Whisper** | ✅ Open source | — | — |
+| **Vosk** | ✅ Open source | — | — |
 
 ---
 
@@ -209,33 +211,35 @@ The AI note-taking market has exploded with solutions for meeting transcription,
 
 | Use Case | Recommended Tool | Why |
 |----------|-----------------|-----|
-| **Sales Teams** | Fireflies.ai | CRM integration (Salesforce) |
-| **Highest Accuracy** | Otter.ai | 95% accuracy, multi-platform |
-| **Budget / Zoom-only** | Fathom | Completely free |
-| **Privacy / Self-hosted** | Whisper | 100% offline, open source |
+| **Sales Teams** | Fireflies.ai | Salesforce/CRM integration |
+| **Highest Accuracy** | Otter.ai | Best independent test results |
+| **Budget-Conscious** | Fathom | Completely free, multi-platform |
+| **Privacy / Self-hosted** | Whisper | 100% offline, MIT license |
 | **All-in-one Workspace** | Notion AI | Integrates with notes, DBs, tasks |
 | **Distributed Teams** | tl;dv | Async-friendly summaries |
+| **Mobile/Edge** | Vosk | Lightweight, offline-capable |
 
 ---
 
 ## Market Trends (2025)
 
-- **AI Summarization:** Moving from transcription-only to intelligent summaries with action items
-- **Integration Depth:** CRM integration becoming table-stakes for sales tools
-- **Privacy Concerns:** Open-source and self-hosted solutions gaining traction
-- **Compliance:** SOC 2, GDPR, HIPAA certifications becoming standard
-- **Market Growth:** 16.5% CAGR through 2033
+- **AI Summarization:** Shifting from transcription-only to intelligent summaries with action items
+- **Integration Depth:** CRM integration becoming table-stakes for sales-oriented tools
+- **Privacy Demand:** Open-source and self-hosted solutions gaining traction (Whisper ecosystem)
+- **Compliance:** SOC 2, GDPR, HIPAA certifications becoming standard requirements
+- **Native AI:** Platform-native AI (Zoom AI Companion, Teams Copilot) reducing need for third-party bots
 
 ---
 
 ## Sources
 
-- https://www.index.dev/blog/otter-vs-fireflies-vs-fathom-ai-meeting-notes-comparison
-- https://craftaiworld.com/blog/best-ai-note-taking-app-2025
-- https://www.plaud.ai/blogs/news/top-10-ai-note-takers-productivity
+- Grand View Research — Speech Recognition Market Report (2024)
+- DataHorizon Research — Voice Recognition Market Analysis (2024)
+- IMARC Group — Speech & Voice Recognition Market (2024)
+- University Transcriptions UK — Independent Accuracy Study (WER benchmarks)
 - https://github.com/openai/whisper
-- https://otter.ai
-- https://fireflies.ai
-- https://fathom.video
-- https://tldv.io
-- https://notion.so
+- https://github.com/alphacep/vosk-api
+- https://github.com/coqui-ai/STT
+- https://github.com/snakers4/silero-models
+- https://github.com/kaldi-asr/kaldi
+- https://otter.ai | https://fireflies.ai | https://fathom.video | https://tldv.io
